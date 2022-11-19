@@ -10,7 +10,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      list: ["りんご", "ばなな", "いちご"],
+      list: ["りんご", "ばなな", "いちご"] as string[],
     };
   },
 });
