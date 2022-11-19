@@ -28,6 +28,12 @@ export default defineComponent({
       // alert(event?.target);
     },
   },
+  created: function () {
+    console.log("created");
+  },
+  mounted: function () {
+    console.log("mounted");
+  },
 });
 </script>
 
