@@ -2,8 +2,8 @@
   <ol>
     <li v-for="item in list" :key="item">{{ item }}</li>
     <button @click="handleClick">Click</button>
-    <p>{{ message }}</p>
-    <input v-model="message" />
+    <p>{{ typeof message }}</p>
+    <input v-model.number="message" />
   </ol>
 </template>
 
