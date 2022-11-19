@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <ol>
+    <li v-for="item in list" :key="item">{{ item }}</li>
+  </ol>
 </template>
 
 <script lang="ts">
@@ -8,7 +10,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      msg: "bar",
+      list: ["りんご", "ばなな", "いちご"],
     };
   },
 });
