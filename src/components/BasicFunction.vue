@@ -1,6 +1,7 @@
 <template>
   <ol>
     <li v-for="item in list" :key="item">{{ item }}</li>
+    <button @click="handleClick">Click</button>
   </ol>
 </template>
 
@@ -12,6 +13,11 @@ export default defineComponent({
     return {
       list: ["りんご", "ばなな", "いちご"] as string[],
     };
+  },
+  methods: {
+    handleClick() {
+      alert(event?.target);
+    },
   },
 });
 </script>
