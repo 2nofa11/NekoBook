@@ -2,6 +2,8 @@
   <ol>
     <li v-for="item in list" :key="item">{{ item }}</li>
     <button @click="handleClick">Click</button>
+    <p>{{ message }}</p>
+    <input v-model="message" />
   </ol>
 </template>
 
@@ -12,6 +14,7 @@ export default defineComponent({
   data() {
     return {
       list: ["りんご", "ばなな", "いちご"] as string[],
+      message: "" as string,
     };
   },
   methods: {
