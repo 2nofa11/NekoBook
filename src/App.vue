@@ -2,10 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import BasicFunction from "./components/BasicFunction.vue";
+import RegisterUpdate from "./components/RegisterUpdate.vue";
 </script>
 
 <template>
-  <basic-function />
+  <register-update />
 </template>
 
 <style scoped>
