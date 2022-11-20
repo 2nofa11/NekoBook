@@ -2,7 +2,7 @@
   <div>
     <div>{{ judgeLength }}</div>
     <div>{{ msg }}</div>
-    <input type="text" value="{{aa}}" />
+    <input type="text" :value="msg" />
   </div>
 </template>
 
