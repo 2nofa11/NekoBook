@@ -24,7 +24,7 @@ export default defineComponent({
     },
   },
   methods: {
-    increment: function () {
+    increment() {
       this.count += 1;
     },
   },
