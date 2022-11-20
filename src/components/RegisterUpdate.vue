@@ -1,4 +1,10 @@
-<template>{{ judgeLength }}</template>
+<template>
+  <div>
+    <div>{{ judgeLength }}</div>
+    <div>{{ msg }}</div>
+    <input type="text" value="{{aa}}" />
+  </div>
+</template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
