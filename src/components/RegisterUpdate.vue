@@ -6,6 +6,7 @@
     <p>{{ count }}</p>
     <button @click="increment">カウントを増やす</button>
   </div>
+  <div><p :class="{ 'is-active': isActive }" class="is-active">Text</p></div>
 </template>
 
 <script lang="ts">
@@ -16,6 +17,8 @@ export default defineComponent({
     return {
       msg: "hello" as string,
       count: 0 as number,
+      isActive: false as boolean,
+      isChild: true as boolean,
     };
   },
   computed: {
@@ -30,3 +33,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.is-active {
+  color: aqua;
+}
+</style>
