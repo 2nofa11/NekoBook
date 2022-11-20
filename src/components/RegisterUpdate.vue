@@ -3,6 +3,8 @@
     <div>{{ judgeLength }}</div>
     <div>{{ msg }}</div>
     <input type="text" :value="msg" />
+    <p>{{ count }}</p>
+    <button @click="increment">カウントを増やす</button>
   </div>
 </template>
 
@@ -12,12 +14,18 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      msg: "hello",
+      msg: "hello" as string,
+      count: 0 as number,
     };
   },
   computed: {
     judgeLength(): string {
       return this.msg.length >= 10 ? "t" : "f";
+    },
+  },
+  methods: {
+    increment: function () {
+      this.count += 1;
     },
   },
 });
