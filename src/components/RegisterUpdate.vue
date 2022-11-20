@@ -14,7 +14,8 @@
   <p>{{ radius }}</p>
   <input type="range" min="0" max="100" v-model="radius" />
   <div>
-    <div v-if="ok">v-if条件による描画</div>
+    <div v-if="ok" key="if">v-if条件による描画：T</div>
+    <div v-else key="else">v-if条件による描画：F</div>
     <div v-show="ok">v-showによる表示</div>
   </div>
 </template>
