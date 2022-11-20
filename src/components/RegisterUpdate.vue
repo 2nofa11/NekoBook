@@ -13,6 +13,10 @@
   </svg>
   <p>{{ radius }}</p>
   <input type="range" min="0" max="100" v-model="radius" />
+  <div>
+    <div v-if="ok">v-if条件による描画</div>
+    <div v-show="ok">v-showによる表示</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -33,6 +37,7 @@ export default defineComponent({
         width: 200,
       },
       radius: 50,
+      ok: false as boolean,
     };
   },
   computed: {
