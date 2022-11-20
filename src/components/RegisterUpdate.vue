@@ -8,6 +8,11 @@
   </div>
   <div><p :class="classObject">Text</p></div>
   <img v-bind="item" />
+  <svg xmlns="https://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="75" v-bind:rx="radius" ry="40" fill="lightpink" />
+  </svg>
+  <p>{{ radius }}</p>
+  <input type="range" min="0" max="100" v-model="radius" />
 </template>
 
 <script lang="ts">
@@ -27,6 +32,7 @@ export default defineComponent({
         src: "../src/assets/vue.svg",
         width: 200,
       },
+      radius: 50,
     };
   },
   computed: {
