@@ -4,9 +4,9 @@
     <div>{{ msg }}</div>
     <input type="text" :value="msg" />
     <p>{{ count }}</p>
-    <button @click="increment">カウントを増やす</button>
+    <button @click="changeColor">カウントを増やす</button>
   </div>
-  <div><p :class="{ 'is-active': isActive }" class="is-active">Text</p></div>
+  <div><p :class="classObject">Text</p></div>
 </template>
 
 <script lang="ts">
@@ -17,8 +17,10 @@ export default defineComponent({
     return {
       msg: "hello" as string,
       count: 0 as number,
-      isActive: false as boolean,
-      isChild: true as boolean,
+      classObject: {
+        isActive: false as boolean,
+        "is-active": true as boolean,
+      },
     };
   },
   computed: {
@@ -30,12 +32,15 @@ export default defineComponent({
     increment() {
       this.count += 1;
     },
+    changeColor() {
+      this.classObject["is-active"] = !this.classObject["is-active"];
+    },
   },
 });
 </script>
 
 <style>
 .is-active {
-  color: aqua;
+  color: green;
 }
 </style>
