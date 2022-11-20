@@ -1,4 +1,4 @@
-<template>{{ const = "aaa" + msg }}</template>
+<template>{{ msg.length >= 10 ? "t" : "f" }}</template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
