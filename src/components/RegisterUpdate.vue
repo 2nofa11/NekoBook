@@ -7,6 +7,7 @@
     <button @click="changeColor">カウントを増やす</button>
   </div>
   <div><p :class="classObject">Text</p></div>
+  <img v-bind="item" />
 </template>
 
 <script lang="ts">
@@ -20,6 +21,11 @@ export default defineComponent({
       classObject: {
         isActive: false as boolean,
         "is-active": true as boolean,
+      },
+      item: {
+        id: "1",
+        src: "../src/assets/vue.svg",
+        width: 200,
       },
     };
   },
