@@ -93,6 +93,9 @@ export default defineComponent({
       this.list[index].hp -= 10;
     },
   },
+  mounted() {
+    console.log(this.$el);
+  },
 });
 </script>
 
