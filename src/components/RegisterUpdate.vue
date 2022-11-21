@@ -27,6 +27,8 @@
       ID.{{ item.id }} {{ item.name }} {{ item.hp }}
       <span v-if="item.hp > 300">つおい</span>
       <button @click="deleteItem(index)">削除</button>
+      <button @click="doClick(index)">攻撃</button>
+      <span v-if="item.hp < 50">瀕死</span>
     </li>
   </ul>
   <button @click="addMonster">召喚</button>
@@ -81,10 +83,12 @@ export default defineComponent({
         name: `ひんし：${this.list[index].name}`,
         hp: 100,
       };
-
       // Vue2ではVue.set関数での宣言だった
       // this.$set(this.list, index, { id: index, name: "a", hp: 300 });
       // this.list.splice(index, 1);
+    },
+    doClick(index: number) {
+      this.list[index].hp -= 10;
     },
   },
 });
