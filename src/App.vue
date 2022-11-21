@@ -3,10 +3,12 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import BasicFunction from "./components/BasicFunction.vue";
 import RegisterUpdate from "./components/RegisterUpdate.vue";
+
+import Section12 from "./components/Section12.vue";
 </script>
 
 <template>
-  <register-update />
+  <section12 />
 </template>
 
 <style scoped>
