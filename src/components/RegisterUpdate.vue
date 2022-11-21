@@ -19,11 +19,17 @@
     <div v-show="ok">v-showによる表示</div>
   </div>
   <ul>
-    <li v-for="item in list" :key="item.id" :class="{ strong: item.hp > 300 }">
+    <li
+      v-for="(item, index) in list"
+      :key="item.id"
+      :class="{ strong: item.hp > 300 }"
+    >
       ID.{{ item.id }} {{ item.name }} {{ item.hp }}
       <span v-if="item.hp > 300">つおい</span>
+      <button @click="deleteItem(index)">削除</button>
     </li>
   </ul>
+  <button @click="addMonster">召喚</button>
 </template>
 
 <script lang="ts">
@@ -63,6 +69,13 @@ export default defineComponent({
     },
     changeColor() {
       this.classObject["is-active"] = !this.classObject["is-active"];
+    },
+    addMonster() {
+      const max = this.list.reduce((acc, b) => (acc > b.id ? acc : b.id), 0);
+      this.list.push({ id: max, hp: 300, name: "hogeごぶ" });
+    },
+    deleteItem(index: number) {
+      this.list.splice(index, 1);
     },
   },
 });
