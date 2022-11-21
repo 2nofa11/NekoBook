@@ -18,6 +18,12 @@
     <div v-else key="else">v-if条件による描画：F</div>
     <div v-show="ok">v-showによる表示</div>
   </div>
+  <ul>
+    <li v-for="item in list" :key="item.id" :class="{ strong: item.hp > 300 }">
+      ID.{{ item.id }} {{ item.name }} {{ item.hp }}
+      <span v-if="item.hp > 300">つおい</span>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -39,6 +45,11 @@ export default defineComponent({
       },
       radius: 50,
       ok: false as boolean,
+      list: [
+        { id: 1, name: "スライム", hp: 100 },
+        { id: 2, name: "ゴブリン", hp: 200 },
+        { id: 3, name: "ゴブリンX", hp: 2000 },
+      ],
     };
   },
   computed: {
@@ -60,5 +71,8 @@ export default defineComponent({
 <style>
 .is-active {
   color: green;
+}
+.strong {
+  color: red;
 }
 </style>
