@@ -32,6 +32,8 @@
     </li>
   </ul>
   <button @click="addMonster">召喚</button>
+  <div v-for="item in [1, 2, 3]">{{ item }}</div>
+  <div v-for="item in 'tnd'">{{ item }}</div>
 </template>
 
 <script lang="ts">
