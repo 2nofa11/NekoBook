@@ -72,10 +72,19 @@ export default defineComponent({
     },
     addMonster() {
       const max = this.list.reduce((acc, b) => (acc > b.id ? acc : b.id), 0);
-      this.list.push({ id: max, hp: 300, name: "hogeごぶ" });
+      this.list.push({ id: max + 1, hp: 300, name: "hogeごぶ" });
     },
     deleteItem(index: number) {
-      this.list.splice(index, 1);
+      // Vue3では、インデックス数値を使った配列
+      this.list[index] = {
+        id: index,
+        name: `ひんし：${this.list[index].name}`,
+        hp: 100,
+      };
+
+      // Vue2ではVue.set関数での宣言だった
+      // this.$set(this.list, index, { id: index, name: "a", hp: 300 });
+      // this.list.splice(index, 1);
     },
   },
 });
