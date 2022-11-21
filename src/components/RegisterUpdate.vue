@@ -34,6 +34,7 @@
   <button @click="addMonster">召喚</button>
   <div v-for="item in [1, 2, 3]">{{ item }}</div>
   <div v-for="item in 'tnd'">{{ item }}</div>
+  <p ref="hello">Hello</p>
 </template>
 
 <script lang="ts">
@@ -95,6 +96,7 @@ export default defineComponent({
   },
   mounted() {
     console.log(this.$el);
+    console.log(this.$refs.hello);
   },
 });
 </script>
