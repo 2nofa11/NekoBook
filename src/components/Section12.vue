@@ -1,5 +1,6 @@
 <template>
   <p :href="url" v-pre>V-pre {{ message }}</p>
+  <p :href="url" v-once>V-once {{ message }}</p>
 </template>
 
 <script lang="ts">
@@ -9,6 +10,7 @@ export default defineComponent({
   data() {
     return {
       message: "静的なコンテンツ",
+      url: "",
     };
   },
 });
