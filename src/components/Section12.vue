@@ -1,6 +1,7 @@
 <template>
   <p :href="url" v-pre>V-pre {{ message }}</p>
   <p :href="url" v-once>V-once {{ message }}</p>
+  <p v-text="message"></p>
 </template>
 
 <script lang="ts">
