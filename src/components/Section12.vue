@@ -3,6 +3,7 @@
   <p :href="url" v-once>V-once {{ message }}</p>
   <p v-text="message"></p>
   <p v-html="message"></p>
+  <div v-cloak class="cloak">{{ message }}</div>
 </template>
 
 <script lang="ts">
@@ -18,4 +19,16 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.cloak[v-cloak] {
+  opacity: 0;
+}
+.cloak {
+  animation: cloak-in 3s;
+}
+@keyframes cloak-in {
+  0% {
+    opacity: 0;
+  }
+}
+</style>
