@@ -6,6 +6,7 @@
     example
   </div>
   <div @click.right.prevent="handler">example</div>
+  <input @keydown.enter="handler('enter')" @keydown.up="handler('up')" />
 </template>
 
 <script lang="ts">
