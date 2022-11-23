@@ -7,7 +7,9 @@ import Section14 from "./components/Section14.vue";
 
 <template>
   あ
-  <anchored-heading :level="1">Hello Vue</anchored-heading>
+  <anchored-heading :level="1"
+    ><div><p>Hello Vue</p></div>
+  </anchored-heading>
 </template>
 
 <style scoped>
