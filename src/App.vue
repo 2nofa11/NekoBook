@@ -1,14 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import BasicFunction from "./components/BasicFunction.vue";
-import RegisterUpdate from "./components/RegisterUpdate.vue";
-
+import AnchoredHeading from "./components/RenderExample.vue";
 import Section14 from "./components/Section14.vue";
 </script>
 
 <template>
-  <section14 />
+  <anchored-heading :level="2">Hello Vue</anchored-heading>
 </template>
 
 <style scoped>
