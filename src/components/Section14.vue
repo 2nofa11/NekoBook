@@ -4,6 +4,8 @@
   <hr />
   <textarea type="text" v-model="message" />
   <pre>{{ message }}</pre>
+  <hr />
+  <label> <input type="checkbox" v-model="value" />{{ value }} </label>
 </template>
 
 <script lang="ts">
@@ -13,6 +15,7 @@ export default defineComponent({
   data() {
     return {
       message: "" as string,
+      value: true as boolean,
     };
   },
 });
