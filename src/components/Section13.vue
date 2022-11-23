@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick">クリック</button>
+  <button @click="handleClick($event)">ここの値</button>
 </template>
 
 <script lang="ts">
@@ -7,8 +7,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   methods: {
-    handleClick() {
-      alert("クリックしたよ！");
+    handleClick(event: Event) {
+      alert(`${(event.target as HTMLButtonElement).innerText}クリックしたよ！`);
     },
   },
 });
