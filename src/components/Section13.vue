@@ -1,6 +1,8 @@
 <template>
   <button @click="handleClick($event)">ここの値</button>
   <input :value="message" @input="handleInput($event)" />
+  <div @click="handler">example</div>
+  <div @click.right.prevent="handler">example</div>
 </template>
 
 <script lang="ts">
@@ -13,6 +15,9 @@ export default defineComponent({
     };
   },
   methods: {
+    handler(event: Event) {
+      console.log(event);
+    },
     handleClick(event: Event) {
       alert(`${(event.target as HTMLButtonElement).innerText}クリックしたよ！`);
     },
