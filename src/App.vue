@@ -5,7 +5,8 @@ import BasicFunction from "./components/BasicFunction.vue";
 import RegisterUpdate from "./components/RegisterUpdate.vue";
 
 import Section14 from "./components/Section14.vue";
-</script
+</script>
+
 <template>
   <section14 />
 </template>
