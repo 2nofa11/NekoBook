@@ -13,6 +13,12 @@
     <label> <input type="checkbox" v-model="val" value="C" />C </label>
     {{ val }}
   </div>
+  <div>
+    <label> <input type="radio" v-model="radioVal" value="a" />A </label>
+    <label> <input type="radio" v-model="radioVal" value="b" />B </label>
+    <label> <input type="radio" v-model="radioVal" value="c" />C </label>
+    {{ radioVal }}
+  </div>
 </template>
 
 <script lang="ts">
@@ -24,6 +30,7 @@ export default defineComponent({
       message: "" as string,
       value: true as boolean,
       val: [] as string[],
+      radioVal: "" as string,
     };
   },
 });
