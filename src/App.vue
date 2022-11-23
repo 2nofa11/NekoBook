@@ -4,11 +4,10 @@
 import BasicFunction from "./components/BasicFunction.vue";
 import RegisterUpdate from "./components/RegisterUpdate.vue";
 
-import Section13 from "./components/Section13.vue";
-</script>
-
+import Section14 from "./components/Section14.vue";
+</script
 <template>
-  <section13 />
+  <section14 />
 </template>
 
 <style scoped>
