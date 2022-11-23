@@ -19,12 +19,13 @@
     <label> <input type="radio" v-model="radioVal" value="c" />C </label>
     {{ radioVal }}
   </div>
-  <select v-model="SelectVal">
-    <option disabled="true">選択</option>
+  <select v-model="selectVal" multiple>
+    <option disabled="false">選択</option>
     <option value="a">A</option>
     <option value="b">B</option>
     <option value="c">C</option>
   </select>
+  {{ selectVal }}
 </template>
 
 <script lang="ts">
@@ -37,7 +38,7 @@ export default defineComponent({
       value: true as boolean,
       val: [] as string[],
       radioVal: "" as string,
-      SelectVal: "" as string,
+      selectVal: [] as string[],
     };
   },
 });
