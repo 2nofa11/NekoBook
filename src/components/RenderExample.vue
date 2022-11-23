@@ -1,14 +1,5 @@
-<template>
-  <h1 v-if="level === 1">
-    <slot></slot>
-  </h1>
-  <h2 v-else-if="level === 2">
-    <slot></slot>
-  </h2>
-</template>
-
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 
 export default defineComponent({
   name: "AnchoredHeading",
@@ -17,6 +8,14 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+  },
+  render() {
+    // return h(
+    //   "h" + this.level, //タグ名
+    //   {}, //props属性
+    //   this.$slots.default // 子供の配列
+    // );
+    return h("h" + this.level, {}, this.$slots.default());
   },
 });
 </script>
