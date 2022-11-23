@@ -2,7 +2,7 @@
   <button @click="handleClick($event)">ここの値</button>
   <input :value="message" @input="handleInput($event)" />
   <div @click="handler('div1')">
-    <a href="#top" @click.stop="handler('div2')">div2</a>
+    <a href="#top" @click.prevent="handler('div2')">div2</a>
     example
   </div>
   <div @click.right.prevent="handler">example</div>
