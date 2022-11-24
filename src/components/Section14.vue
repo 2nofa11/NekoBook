@@ -31,6 +31,8 @@
     <input type="file" @change="handleChange" />
     <div v-if="preview">!<img :src="preview" /></div>
   </div>
+  <hr />
+  <input type="range" v-model.number="html5Val" />{{ html5Val }}
 </template>
 
 <script lang="ts">
@@ -45,6 +47,7 @@ export default defineComponent({
       radioVal: "" as string,
       selectVal: [] as string[],
       preview: "" as string,
+      html5Val: 0 as number,
     };
   },
   methods: {
