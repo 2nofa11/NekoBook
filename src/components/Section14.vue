@@ -26,6 +26,11 @@
     <option value="c">C</option>
   </select>
   {{ selectVal }}
+  <hr />
+  <div>
+    <input type="file" @change="handleChange" />
+    <div v-if="preview">!<img :src="preview" /></div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -39,7 +44,17 @@ export default defineComponent({
       val: [] as string[],
       radioVal: "" as string,
       selectVal: [] as string[],
+      preview: "" as string,
     };
+  },
+  methods: {
+    handleChange(e: Event) {
+      if (e.target instanceof HTMLInputElement && e.target.files) {
+        const file = e.target.files[0];
+        if (!file.type.match(/^image\/(png|jpeg)$/)) return;
+        this.preview = window.URL.createObjectURL(file);
+      }
+    },
   },
 });
 </script>
