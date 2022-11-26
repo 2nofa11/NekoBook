@@ -6,6 +6,17 @@
   <div>Y：{{ halfPoint.y }}</div>
   <hr />
   <input v-model.number="halfWidth" />{{ halfWidth }}
+  <hr />
+  <!-- 算出プロパティ -->
+  <ol>
+    <li>{{ computedData }}</li>
+    <li>{{ computedData }}</li>
+  </ol>
+  <!-- メソッド -->
+  <ol>
+    <li>{{ computedDataMethod() }}</li>
+    <li>{{ computedDataMethod() }}</li>
+  </ol>
 </template>
 
 <script lang="ts">
@@ -17,6 +28,11 @@ export default defineComponent({
       width: 800,
       height: 600,
     };
+  },
+  methods: {
+    computedDataMethod() {
+      return Math.random();
+    },
   },
   computed: {
     halfWidth: {
@@ -35,6 +51,9 @@ export default defineComponent({
         x: this.halfWidth,
         y: this.halfHeight,
       };
+    },
+    computedData() {
+      return Math.random();
     },
   },
 });
