@@ -2,11 +2,14 @@
   <header :class="{ compact: scrollY > 1 }">
     1pxよりスクロールしたらcompactを付与
   </header>
+  <div />
+  <button @click="scrollTop()">上部へ戻る</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-
+import smoothScroll from "smooth-scroll";
+const scroll = new smoothScroll();
 export default defineComponent({
   data() {
     return {
@@ -31,6 +34,9 @@ export default defineComponent({
         }, 200);
       }
     },
+    scrollTop() {
+      scroll.animateScroll(0);
+    },
   },
 });
 </script>
@@ -38,5 +44,8 @@ export default defineComponent({
 <style>
 .compact {
   color: aqua;
+}
+div {
+  height: 1000px;
 }
 </style>
