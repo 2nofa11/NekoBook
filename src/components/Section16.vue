@@ -4,6 +4,8 @@
   <hr />
   <div>X：{{ halfPoint.x }}</div>
   <div>Y：{{ halfPoint.y }}</div>
+  <hr />
+  <input v-model.number="halfWidth" />{{ halfWidth }}
 </template>
 
 <script lang="ts">
@@ -17,8 +19,13 @@ export default defineComponent({
     };
   },
   computed: {
-    halfWidth() {
-      return this.width / 2;
+    halfWidth: {
+      get: function () {
+        return this.width / 2;
+      },
+      set: function (val: number) {
+        this.width = val * 2;
+      },
     },
     halfHeight() {
       return this.height / 2;
