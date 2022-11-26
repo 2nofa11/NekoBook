@@ -26,10 +26,13 @@
       {{ item.name }}：{{ item.price }}
     </li>
   </ul>
+  <hr />
+  <button @click="order = !order">切り替え</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import _ from "lodash";
 
 export default defineComponent({
   data() {
@@ -45,6 +48,7 @@ export default defineComponent({
         { id: 4, name: "りんご", price: 500 },
         { id: 5, name: "めろん", price: 600 },
       ],
+      order: false,
     };
   },
   methods: {
@@ -77,7 +81,10 @@ export default defineComponent({
       return this.lists.filter((el) => el.price < this.budget);
     },
     limited() {
-      return this.matched.slice(0, this.limit);
+      return this.sorted.slice(0, this.limit);
+    },
+    sorted() {
+      return _.orderBy(this.matched, "price", this.order ? "desc" : "asc");
     },
   },
 });
