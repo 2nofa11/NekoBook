@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section15 from "./components/Section15.vue";
+import Section16 from "./components/Section16.vue";
 </script>
 
 <template>
-  <Section15 />
+  <Section16 />
 </template>
 
 <style scoped>
