@@ -12,7 +12,7 @@ export default defineComponent({
   },
   directives: {
     focus: {
-      mounted: function (el: any) {
+      mounted: function (el) {
         el.focus();
       },
     },
