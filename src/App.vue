@@ -1,12 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section23 from "./components/Section23.vue";
+import Section24Parent from "./components/Section24Parent.vue";
 </script>
 
 <template>
   <ul>
-    <Section23 v-for="item in ['A', 'B']" :val="item" />
+    <section-24-parent />
   </ul>
 </template>
 
