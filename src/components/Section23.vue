@@ -3,13 +3,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
+type PropObj = {
+  name: string;
+  age: number;
+};
 export default defineComponent({
   props: {
     val: {
       required: true,
       type: String,
+    },
+    object: {
+      type: Object as PropType<PropObj>,
     },
   },
 });
