@@ -1,5 +1,5 @@
 <template>
-  <p>{{ val }}</p>
+  <li>{{ val }}</li>
 </template>
 
 <script lang="ts">

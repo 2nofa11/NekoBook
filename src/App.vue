@@ -5,8 +5,9 @@ import Section23 from "./components/Section23.vue";
 </script>
 
 <template>
-  <Section23 val="A" />
-  <Section23 val="B" />
+  <ul>
+    <Section23 v-for="item in ['A', 'B']" :val="item" />
+  </ul>
 </template>
 
 <style scoped>
