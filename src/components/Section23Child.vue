@@ -8,7 +8,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   methods: {
     handleClick() {
-      this.$emit("child-event");
+      this.$emit("child-event", { id: 1, name: "なまえ" });
     },
   },
 });

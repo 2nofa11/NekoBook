@@ -1,5 +1,9 @@
 <template>
-  <li>{{ val }} 君<Section23Child @child-event="parentsMethod" /></li>
+  <li>
+    {{ val }} 君<Section23Child
+      @child-event="parentsMethod($event, parentsData)"
+    />
+  </li>
 </template>
 
 <script lang="ts">
@@ -11,6 +15,11 @@ type PropObj = {
 };
 export default defineComponent({
   components: { Section23Child },
+  data() {
+    return {
+      parentsData: "君",
+    };
+  },
   props: {
     val: {
       required: true,
@@ -21,8 +30,8 @@ export default defineComponent({
     },
   },
   methods: {
-    parentsMethod() {
-      alert(`${this.val}が押された。`);
+    parentsMethod(childArg: any, data: string) {
+      alert(`${childArg.name}：${this.val}${data}が押された。`);
     },
   },
 });
