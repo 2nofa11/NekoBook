@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :value="title" @input="$emit($event.target.value)" />
+  <input type="text" :value="title" @input="inputEvent" />
 </template>
 
 <script lang="ts">
@@ -9,6 +9,16 @@ export default defineComponent({
   props: {
     title: {
       type: String,
+    },
+  },
+  methods: {
+    inputEvent(event: Event) {
+      const { target } = event;
+      if (!(target instanceof HTMLInputElement)) {
+        console.log(target);
+        return; // or throw new TypeError();
+      }
+      this.$emit("update:title", target.value);
     },
   },
 });
