@@ -1,5 +1,5 @@
 <template>
-  <header><slot name="header">デフォルトタイトル</slot></header>
+  <header><slot name="header" text="Hello!">デフォルトタイトル</slot></header>
   <div class="comp-child"><slot>何もない時</slot></div>
   <footer name="footer"></footer>
 </template>

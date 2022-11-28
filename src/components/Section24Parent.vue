@@ -1,6 +1,6 @@
 <template>
   <Section24Child>
-    <template v-slot:header>Hello Vue.js</template>
+    <template v-slot:header="slotProps">{{ slotProps.text }} Vue.js</template>
     <div class="parent-style">フォールバックコンテンツ</div>
   </Section24Child>
 </template>
