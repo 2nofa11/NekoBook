@@ -1,7 +1,7 @@
 <template>
   <header><slot name="header">デフォルトタイトル</slot></header>
   <div class="comp-child"><slot>何もない時</slot></div>
-  <footer>デフォルトフッター</footer>
+  <footer name="footer"></footer>
 </template>
 
 <script lang="ts">
