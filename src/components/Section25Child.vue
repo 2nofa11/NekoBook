@@ -1,5 +1,6 @@
 <template>
   <input type="text" :value="title" @input="inputEvent" />
+  <p>{{ length }}</p>
 </template>
 
 <script lang="ts">
@@ -9,6 +10,9 @@ export default defineComponent({
   props: {
     title: {
       type: String,
+    },
+    length: {
+      type: Number,
     },
   },
   methods: {
