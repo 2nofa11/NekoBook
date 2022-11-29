@@ -1,6 +1,6 @@
 <template>
   <li>
-    {{ val }} 君<Section23Child
+    {{ val }} 君<section-23-child
       @child-event="parentsMethod($event, parentsData)"
     />
   </li>

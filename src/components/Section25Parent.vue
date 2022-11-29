@@ -5,10 +5,10 @@
   </div>
   <div>
     <p>子</p>
-    <Section25Child
+    <section-25-child
       v-model:title="titleComputed"
       v-model:length="titleComputed.length"
-    ></Section25Child>
+    ></section-25-child>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
-  <Section24Child>
+  <section-24-child>
     <template v-slot:header="slotProps">{{ slotProps.text }} Vue.js</template>
     <div class="parent-style">フォールバックコンテンツ</div>
-  </Section24Child>
+  </section-24-child>
 </template>
 
 <script lang="ts">
