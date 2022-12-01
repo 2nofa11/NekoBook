@@ -1,14 +1,13 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section35 from "./components/Section35.vue";
+import Section39 from "./components/Section39.vue";
 </script>
 
 <template>
   <ul>
-    <section-35 />
+    <section-39 />
   </ul>
-  ふーん
 </template>
 
 <style scoped>

@@ -13,7 +13,8 @@
     "@types/smooth-scroll": "^16.1.1",
     "lodash": "^4.17.21",
     "smooth-scroll": "16.1",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
