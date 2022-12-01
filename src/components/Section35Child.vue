@@ -1,13 +1,13 @@
 <template>
-  <div class="hoge">hoge</div>
-  <Section35Child>slot利用</Section35Child>
+  <div class="huga">
+    <div><slot /></div>
+  </div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
-import Section35Child from "./Section35Child.vue";
 
 export default defineComponent({
-  components: { Section35Child },
   data() {
     return {};
   },
@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.hoge {
-  color: aqua;
+.huga {
+  color: red;
 }
 </style>
