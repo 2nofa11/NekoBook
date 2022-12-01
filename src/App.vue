@@ -1,13 +1,14 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section26Parent from "./components/Section26Parent.vue";
+import Section35 from "./components/Section35.vue";
 </script>
 
 <template>
   <ul>
-    <section-26-parent />
+    <section-35 />
   </ul>
+  ふーん
 </template>
 
 <style scoped>
