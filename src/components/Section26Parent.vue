@@ -1,7 +1,7 @@
-<template>
+<template v-if="show">
+  <button @click="show = !show">show</button>
   <button @click="current = !current">^てなんぞ</button>
-  <component :is="component"></component>
-  {{ component }}
+  <component v-if="show" :is="component"></component>
 </template>
 
 <script lang="ts">
@@ -25,6 +25,7 @@ export default defineComponent({
   data() {
     return {
       current: true,
+      show: true,
     };
   },
   computed: {
