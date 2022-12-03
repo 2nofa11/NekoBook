@@ -7,7 +7,7 @@
 import { defineComponent } from "vue";
 import { mapGetters } from "vuex";
 export default defineComponent({
-  computed: mapGetters(["message"]),
+  computed: { ...mapGetters(["message"]) },
   // message: {
   //   get() {
   //     return this.$store.getters.message;
