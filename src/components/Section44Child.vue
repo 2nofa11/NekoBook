@@ -1,11 +1,11 @@
 <template>
   <!-- <div><input type="text" v-model="message" /></div> -->
-  <div><input type="text" @input="doUpdate" />{{ message }}</div>
+  <div><input type="text" @input="update" />{{ message }}</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default defineComponent({
   computed: { ...mapGetters(["message"]) },
   // message: {
@@ -18,10 +18,15 @@ export default defineComponent({
   // },
 
   methods: {
-    doUpdate(event: Event) {
+    // doUpdate(event: Event) {
+    //   if (!(event.target instanceof HTMLInputElement)) return;
+    //   this.$store.dispatch("doUpdate", event.target!.value);
+    // },
+    update(event: Event) {
       if (!(event.target instanceof HTMLInputElement)) return;
-      this.$store.dispatch("doUpdate", event.target!.value);
+      this.doUpdate(event.target!.value);
     },
+    ...mapActions(["doUpdate"]),
   },
 });
 </script>
