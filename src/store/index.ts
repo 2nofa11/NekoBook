@@ -19,11 +19,9 @@ const moduleCounter = {
       state.count++;
     },
   },
-  action: {
-    incrementIfOddOnRootSum({ state, commit, rootState }: any) {
-      if ((state.count + rootState.count) % 2 === 1) {
-        commit("increment");
-      }
+  actions: {
+    actionType({ dispatch, commit, getters, rootGetters }, message: any) {
+      dispatch("doUpdate", message, { root: true });
     },
   },
 };
