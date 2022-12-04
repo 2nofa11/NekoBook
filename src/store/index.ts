@@ -1,6 +1,7 @@
 import { createStore, Payload } from "vuex";
 
 const moduleCounter = {
+  namespaced: true,
   state: () => ({
     count: 0,
   }),
