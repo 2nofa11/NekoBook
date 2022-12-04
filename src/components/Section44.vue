@@ -24,7 +24,7 @@ export default defineComponent({
       return this.$store.getters["moduleCounter/count"];
     },
     message() {
-      return this.$store.getters["moduleCounter/age"];
+      return this.$store.getters.message;
     },
     age() {
       return this.$store.getters["moduleCounter/age"];
