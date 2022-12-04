@@ -7,7 +7,10 @@ const moduleCounter = {
   }),
   getters: {
     count(state: any) {
-      return state.count;
+      return state.count + 1;
+    },
+    age(state: any, getters: any, rootState: any, rootGetters: any) {
+      return getters.count + rootGetters.age;
     },
   },
   mutations: {
@@ -45,6 +48,16 @@ const moduleMessage = {
 };
 
 export const store = createStore({
+  state() {
+    return {
+      age: 28,
+    };
+  },
+  getters: {
+    age(state: any) {
+      return state.age;
+    },
+  },
   modules: {
     moduleCounter,
     moduleMessage,

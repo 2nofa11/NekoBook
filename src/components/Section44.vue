@@ -1,5 +1,5 @@
 <template>
-  <div>カウント{{ storeData }}</div>
+  <div>カウント{{ storeData }}：{{ age }}</div>
   <div>{{ message }}</div>
   <Section44Child></Section44Child>
 </template>
@@ -23,6 +23,9 @@ export default defineComponent({
     },
     message() {
       return this.$store.getters.message;
+    },
+    age() {
+      return this.$store.getters["moduleCounter/age"];
     },
   },
 });
