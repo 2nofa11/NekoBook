@@ -4,6 +4,11 @@ const moduleCounter = {
   state: () => ({
     count: 0,
   }),
+  getters: {
+    count(state: any) {
+      return state.count;
+    },
+  },
   mutations: {
     increment(state: any) {
       // `state` はモジュールのローカルステート
