@@ -13,13 +13,13 @@ export default defineComponent({
     return {};
   },
   mounted() {
-    console.log(this.$store.state.count);
+    console.log((this.$store.state as any).moduleCounter.count);
     this.$store.commit("increment");
-    console.log(this.$store.state.count);
+    console.log((this.$store.state as any).moduleCounter.count);
   },
   computed: {
     storeData: function () {
-      return this.$store.state.count;
+      return (this.$store.state as any).moduleCounter.count;
     },
     message() {
       return this.$store.getters.message;

@@ -1,26 +1,46 @@
-import { createStore } from "vuex";
+import { createStore, Payload } from "vuex";
 
-export const store = createStore({
-  state: {
+const moduleCounter = {
+  state: () => ({
     count: 0,
-    message: "初期メッセージ",
-  },
-  getters: {
-    message(state) {
-      return state.message;
-    },
-  },
+  }),
   mutations: {
-    increment(state) {
+    increment(state: any) {
+      // `state` はモジュールのローカルステート
       state.count++;
     },
-    setMessage(state, payload) {
+  },
+  action: {
+    incrementIfOddOnRootSum({ state, commit, rootState }: any) {
+      if ((state.count + rootState.count) % 2 === 1) {
+        commit("increment");
+      }
+    },
+  },
+};
+
+const moduleMessage = {
+  state: () => ({ message: "初期メッセージ" }),
+  mutations: {
+    setMessage(state: any, payload: any) {
       state.message = payload.message;
     },
   },
+  getters: {
+    message(state: any) {
+      return state.message;
+    },
+  },
   actions: {
-    doUpdate({ commit }, message) {
+    doUpdate({ commit }: any, message: any) {
       commit("setMessage", { message });
     },
+  },
+};
+
+export const store = createStore({
+  modules: {
+    moduleCounter,
+    moduleMessage,
   },
 });
