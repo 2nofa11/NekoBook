@@ -18,6 +18,12 @@ export default defineComponent({
     console.log(this.$store.getters["moduleCounter/count"]);
     this.$store.commit("moduleCounter/increment");
     console.log(this.$store.getters["moduleCounter/count"]);
+    this.$store.watch(
+      () => this.message,
+      () => {
+        console.log("hoge");
+      }
+    );
   },
   computed: {
     storeData: function () {
