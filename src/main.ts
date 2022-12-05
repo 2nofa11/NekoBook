@@ -2,6 +2,7 @@ import { createApp, App } from "vue";
 import "./style.css";
 import AppVue from "./App.vue";
 import { store } from "./store/index";
+import { router } from "./router";
 
 const myPlugin = {
   install(Vue: any, option: { lang: string }) {
@@ -29,6 +30,7 @@ const windowPlugin = {
 };
 const app = createApp(AppVue);
 app.use(store);
+app.use(router);
 // app.use(myPlugin, { lang: "ja" });
 // app.use(windowPlugin);
 app.mount("#app");

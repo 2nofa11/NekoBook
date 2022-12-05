@@ -5,9 +5,11 @@ import Section39 from "./components/Section44.vue";
 </script>
 
 <template>
-  <ul>
-    <section-39 />
-  </ul>
+  <nav>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/view">View</RouterLink>
+  </nav>
+  <RouterView />
 </template>
 
 <style scoped>
