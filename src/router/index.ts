@@ -3,8 +3,10 @@ import Home from "../components/Section48_Home.vue";
 import View from "../components/Section48_View.vue";
 
 const routes = [
+  // ルート1
   { path: "/", component: Home },
-  { path: "/view", component: View },
+  // ルート2
+  { path: "/view/:id", component: View },
 ];
 export const router = createRouter({
   history: createWebHistory(),

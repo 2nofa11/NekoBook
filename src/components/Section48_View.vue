@@ -16,7 +16,7 @@ export default defineComponent({
       return this.$route.path;
     },
     routerParam() {
-      return this.$route.params;
+      return this.$route.params.id;
     },
   },
 });
