@@ -2,6 +2,7 @@
   <div>View</div>
   <div>{{ routerPath }}</div>
   <div>{{ routerParam }}</div>
+  <div>{{ routerQuery }}</div>
 </template>
 
 <script lang="ts">
@@ -17,6 +18,9 @@ export default defineComponent({
     },
     routerParam() {
       return this.$route.params.id;
+    },
+    routerQuery() {
+      return this.$route.query;
     },
   },
 });
