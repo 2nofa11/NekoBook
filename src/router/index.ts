@@ -7,6 +7,7 @@ const routes = [
   { path: "/", component: Home },
   // ルート2
   { path: "/view/:id", component: View },
+  { path: "/view", redirect: "/view/none" },
 ];
 export const router = createRouter({
   history: createWebHistory(),
