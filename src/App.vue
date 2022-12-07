@@ -1,16 +1,10 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section39 from "./components/Section44.vue";
+import Section50 from "./components/Section50.vue";
 </script>
 
-<template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/view">View</RouterLink>
-  </nav>
-  <RouterView />
-</template>
+<template><Section50 /></template>
 
 <style scoped>
 .logo {
