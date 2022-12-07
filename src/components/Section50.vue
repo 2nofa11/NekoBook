@@ -1,7 +1,7 @@
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/view">View</RouterLink>
+    <RouterLink :to="`/view/${id}`" tag="button">View</RouterLink>
   </nav>
   <RouterView />
 </template>
@@ -11,7 +11,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   data() {
-    return {};
+    return { id: "hoge" };
   },
 });
 </script>
