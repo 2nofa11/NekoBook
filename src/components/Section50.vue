@@ -20,4 +20,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.router-link-active {
+  background: red;
+}
+</style>
