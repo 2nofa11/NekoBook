@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../components/Section48_Home.vue";
-import View from "../components/Section48_View.vue";
+import Product from "../components/Section51_Product.vue";
+import ProductList from "../components/Section51_ProductList.vue";
 
 const routes = [
   // ルート1
-  { path: "/", component: Home },
+  { path: "/product", component: ProductList },
   // ルート2
-  { path: "/view/:id", component: View },
-  { path: "/view", redirect: "/view/none" },
+  { path: "/product/:id", component: Product, props: true },
 ];
 export const router = createRouter({
   history: createWebHistory(),
