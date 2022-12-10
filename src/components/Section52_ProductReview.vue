@@ -9,6 +9,10 @@ export default defineComponent({
   computed: {
     list: () => products.fetch(),
   },
+  beforeRouteEnter(to, from, next) {
+    console.log("component:beforeRouteEnter", this);
+    next();
+  },
 });
 </script>
 

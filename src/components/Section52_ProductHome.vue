@@ -1,9 +1,10 @@
 <template>
   <div class="product-list">
     <h1>商品情報</h1>
-    <p>コンページはID.{{ id }}の詳細を表示する</p>
+    <p>コンページはID.{{ param }}の詳細を表示する</p>
     <p>商品名：{{ item.name }}</p>
   </div>
+  <button @click="nextItem">次へ</button>
 </template>
 
 <script lang="ts">
@@ -19,18 +20,29 @@ export default defineComponent({
   data() {
     return {
       item: {} as Product,
+      param: this.id,
     };
   },
+  methods: {
+    nextItem() {
+      this.param += this.param;
+      this.$router.push(`/product/${this.param}`);
+    },
+  },
   watch: {
-    id: {
+    param: {
       handler() {
-        products.asyncFind(this.id, (item) => {
+        products.asyncFind(this.param, (item) => {
           if (item === undefined) return;
           this.item = item;
         });
       },
       immediate: true,
     },
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("component:beforeRouteUpdate", this);
+    next();
   },
 });
 </script>
