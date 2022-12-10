@@ -28,6 +28,16 @@ const windowPlugin = {
     });
   },
 };
+
+router.beforeEach((to, from, next) => {
+  console.log("global:beforeEach");
+  next();
+});
+
+router.beforeResolve((to, form, next) => {
+  console.log("global:afterEach");
+  next();
+});
 const app = createApp(AppVue);
 app.use(store);
 app.use(router);
