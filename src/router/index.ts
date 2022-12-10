@@ -6,7 +6,11 @@ const routes = [
   // ルート1
   { path: "/product", component: ProductList },
   // ルート2
-  { path: "/product/:id", component: Product, props: true },
+  {
+    path: "/product/:id",
+    component: Product,
+    props: (route: any) => ({ id: Number(route.params.id) }),
+  },
 ];
 export const router = createRouter({
   history: createWebHistory(),
