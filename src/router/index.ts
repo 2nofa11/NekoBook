@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Product from "../components/Section51_Product.vue";
 import ProductList from "../components/Section51_ProductList.vue";
+import ProductHome from "../components/Section52_ProductHome.vue";
+import ProductReview from "../components/Section52_ProductReview.vue";
 
 const routes = [
   // ルート1
@@ -10,6 +12,19 @@ const routes = [
     path: "/product/:id",
     component: Product,
     props: (route: any) => ({ id: Number(route.params.id) }),
+    children: [
+      {
+        name: "product-home",
+        path: "",
+        component: ProductHome,
+        props: (route: any) => ({ id: Number(route.params.id) }),
+      },
+      {
+        name: "product-review",
+        path: "review",
+        component: ProductReview,
+      },
+    ],
   },
 ];
 export const router = createRouter({
