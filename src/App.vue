@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Section51 from "./components/Section51.vue";
+import Section from "./components/SectionEX.vue";
 </script>
 
-<template><Section51 /></template>
+<template><Section /></template>
 
 <style scoped>
 .logo {
