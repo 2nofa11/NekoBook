@@ -1,16 +1,27 @@
-<template>テスト子：{{ count }}</template>
+<template>
+  テスト子：{{ displayCount }}
+  <div><button @click="increment">親へ</button></div>
+</template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   props: {
-    count: Number,
+    count: {
+      type: Number,
+      required: true,
+    },
   },
   setup(props) {
     const count = props.count;
+    const displayCount = ref(0);
     console.log(count);
+    const increment = () => {
+      displayCount.value++;
+    };
     return {
-      count,
+      displayCount,
+      increment,
     };
   },
 });
