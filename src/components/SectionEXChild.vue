@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, toRefs } from "vue";
 export default defineComponent({
   props: {
     count: {
@@ -13,7 +13,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const count = props.count;
+    const { count } = toRefs(props);
     const displayCount = ref(0);
     console.log(count);
     const increment = () => {
