@@ -1,10 +1,10 @@
 <template>
-  テスト子：{{ displayCount }}
+  テスト子：{{ count }}
   <div><button @click="increment">親へ</button></div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, toRefs } from "vue";
+import { defineComponent, ref, toRefs, defineEmits } from "vue";
 export default defineComponent({
   props: {
     count: {
@@ -12,15 +12,14 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  emits: ["click"],
+  setup(props, context) {
     const { count } = toRefs(props);
-    const displayCount = ref(0);
-    console.log(count);
     const increment = () => {
-      displayCount.value++;
+      context.emit("click");
     };
     return {
-      displayCount,
+      count,
       increment,
     };
   },
